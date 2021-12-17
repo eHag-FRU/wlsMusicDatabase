@@ -1,0 +1,50 @@
+.mainGrid {
+    display: inline-grid;
+    position:center;
+    grid-template:
+        "Header   Header      Header   Header" 1fr
+        "Side     Search      Search    EndSide" 1fr
+        "Side     Search      Search    EndSide" 1fr
+        "Side     Search      Search    EndSide" 1fr
+        "Footer   Footer      Footer   Footer" 1fr
+        / 1fr      1fr         1fr       1fr;  
+
+}
+
+header {
+    position: center;
+    display: inline-grid;
+    grid-area: Header;
+    float: left;
+    background-color: orange;
+    color: white;
+}
+
+.Side {
+    position: center;
+    display: inline-grid;
+    grid-area: Side;
+    background-color: black;
+    color: orange;
+}
+
+.Footer {
+    position: center;
+    display: inline-grid;
+    grid-area: Footer;
+    background-color: red;
+}
+
+.Search {
+    position: center;
+    display: inline-grid;
+    grid-area: Search;
+    background-color: purple;
+}
+
+.EndSide {
+    position: center;
+    display: inline-grid;
+    grid-area: EndSide;
+    background-color: green;
+}
