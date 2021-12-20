@@ -4,7 +4,7 @@
 	<head>
 		<title><?=$title?></title>
 
-		<link rel="stylesheet" href="../assets/CSS/index.css">
+		<link rel="stylesheet" href="assets/CSS/index.css">
 	</head>
 
 	<body>

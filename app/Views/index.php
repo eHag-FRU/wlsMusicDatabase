@@ -1,5 +1,5 @@
 			
-			<img src="../app/assets/Images/treble.jpg" class="Image">
+			<img src="assets/Images/treble.jpg" class="Image">
 
 
 
