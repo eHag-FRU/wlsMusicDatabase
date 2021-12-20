@@ -1,49 +1,31 @@
-<!DOCTYPE html>
-
-<html>
-	<head>
-		<title>Test</title>
-
-		<link rel="stylesheet" href="CSS/index.css">
-	</head>
-
-	<body>
-		<div class="mainGrid">
-			<header class="header">
-		
-				<h1>This is a test header</h1>
-				
-			</header>
-
-			<nav class="Side" id="Side">
-				<ul>
-
-					<li>This is a test item</li>
-
-				</ul>
+			
+			<img src="../app/assets/Images/treble.jpg" class="Image">
 
 
-			</nav>
 
-			<form class="Search" id="Search">
-				<h1>This is a test Form</h1>
-			<form>
+			<main class="Search">
+				<form action="/Search/Search" method="POST">
+					<lable for="Title">Title:</lable>
+					<input type="text" class="Title" id="Title" name="form[title]" placeholder="Crazy Train" required>
 
-			<nav class="EndSide" id="EndSide">
-				<ul>
+					<br>
 
-					<li>This is a test item</li>
+					<lable for="Type">Piece Type: </lable>
+					<select class="Type" name="form[type]" required>
+						<option	value="Concert">Concert</option>
 
-				</ul>
+						<option value="Marching">Marching/Pep</option>
+					</select>
+
+					<br>
+
+					<lable for="Composer">Composer</lable>
+					<input type="text" class='Composer' name="form[composer]">
+
+				<form>
+
+				<br><button type="submit">Submit</button>
+			</main>
 
 
-			</nav>
-
-
-			<footer class="Footer" id="Footer">
-				<h2>This is a test footer</h2>
-			</Footer>
-		</div>
-	</body>
-
-</html>
+			

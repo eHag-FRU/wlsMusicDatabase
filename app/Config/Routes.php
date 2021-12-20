@@ -49,3 +49,15 @@ $routes->get('/', 'Home::index');
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
+
+/*
+    NOTE: 
+
+    Code was provided by user maetulj on StackOverflow. All credit goes to the user as I have not written this fucntion call in any
+    way shape or form.
+
+    Link to form: https://stackoverflow.com/questions/19820314/codeigniter-assets-folder-best-practice
+
+ */
+
+$route['assets/(:any)'] = 'assets/$1';

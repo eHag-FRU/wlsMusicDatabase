@@ -1,0 +1,106 @@
+* {
+    font-family: Calibri;
+}
+
+.mainGrid {
+    display: grid;
+    grid-template:
+        "Header   Header    Header    Header     Header " 1fr
+        "Nav      Nav       Nav       Nav        Nav    " 0.5fr
+        ".        .         .         .          .      " 0.25fr
+        "Image    Search    Search    Search     .      "  0.5fr
+        "Image    Search    Search    Search     .      "  1fr
+        "Image    Search    Search    Search     .      "  1fr
+        "Image    Search    Search    Search     .      "  1fr
+        "Image      .        .         .         .      "  0.5fr
+        "Footer   Footer    Footer    Footer     Footer "  1fr
+        /1fr       1fr      1fr       1fr          1fr;  
+
+}
+
+
+
+body {
+    background: url("public/Images/background.jpg");
+}
+
+
+nav ul li {
+    list-style: none; 
+    float: left;
+}
+
+nav ul li a {
+    text-align: center;
+    text-decoration: none;
+    margin: 80px;
+}
+
+nav ul li a:link {
+    color: white;
+}
+
+nav ul li a:visited {
+    color: white;
+
+}
+
+nav ul li a:hover {
+    color: darkorange;
+}
+
+header {
+    justify-content: center;
+    display: inline-grid;
+    grid-area: Header;
+    background-color: darkorange;
+    color: white;
+}
+
+
+.Footer {
+    position: center;
+    justify-content: center;
+    display: inline-grid;
+    grid-area: Footer;
+    background-color: darkgrey;
+}
+
+.Search {
+    /*Positioning of the content*/
+    position: center;
+    justify-content: center;
+
+    /*Grid Area and Display Tatic*/
+    display: inline-grid;
+    grid-area: Search;
+
+    /*The boarder and shadow effects to bring users attention to the search form */
+    border-style: groove;
+    box-shadow: -2px 1px 3px 5px rgba(126, 129, 135, 0.5);
+}
+
+.Nav {
+    /*Positioning of the content*/
+    position: center;
+    justify-content: center;
+
+    /*Grid Area and Display Tatic*/
+    display: inline-grid;
+    grid-area: Nav;
+
+    /*Text and Background colors*/
+    background-color: black;
+    color: white;
+}
+
+.Image {
+    justify-content: center;
+
+
+    display: inline-grid;
+    grid-area: Image;
+
+    width: 250px;
+    height: 300px;
+}
