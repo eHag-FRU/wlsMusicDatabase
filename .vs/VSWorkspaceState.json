@@ -2,11 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\app",
+    "\\app\\Database",
     "\\app\\Views",
-    "\\public",
-    "\\public\\CSS",
-    "\\public\\Images"
+    "\\public"
   ],
-  "SelectedNode": "\\app\\Views\\index.php",
+  "SelectedNode": "\\app\\Database\\Seeds",
   "PreviewInSolutionExplorer": false
 }
