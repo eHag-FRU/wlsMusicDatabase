@@ -4,6 +4,8 @@
 	<head>
 		<title><?=$title?></title>
 
+		<link rel="icon" href="assets/Images/favicon.ico">
+
 		<link rel="stylesheet" href="assets/CSS/index.css">
 	</head>
 

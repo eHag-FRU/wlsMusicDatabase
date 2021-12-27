@@ -1,10 +1,10 @@
-			
+
 			<img src="assets/Images/treble.jpg" class="Image">
 
 
 
 			<main class="Search">
-				<form action="/Search/Search" method="POST">
+				<form action="/Search" method="POST">
 					<lable for="Title">Title:</lable>
 					<input type="text" class="Title" id="Title" name="form[title]" placeholder="Crazy Train" required>
 
@@ -19,8 +19,8 @@
 
 					<br>
 
-					<lable for="Composer">Composer</lable>
-					<input type="text" class='Composer' name="form[composer]">
+					<lable for="Arranger">Arranger</lable>
+					<input type="text" class='Arranger' name="form[Arranger]">
 
 				<form>
 

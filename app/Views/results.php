@@ -1,19 +1,17 @@
-<!DOCTYPE html>
-
-<html>
-
-	<head>
-		<title><?=$title?></title>
-	</head>
-
-	<body>
+		<!--Lists attributes of each piece as list items and a header -->
 		<ul>
 
-		<?php foreach($form_data as $key => $value): ?>
-			<li><?= $key ?>: <?= $value ?></li>
-		<?php endforeach; ?>
+			<?php foreach($results as $piece):?>
+				<li><?= $piece['Title'] ?></li>
 
+				<ul>
+					<li><?= $piece['Arranger'] ?></li>
+
+					<li><?= $piece['Piece_ID'] ?></li>
+
+					<li><?= $piece['Last_Played'] ?></li>
+
+					<li><?= $piece['Type'] ?></li>
+				</ul>
+			<?php endforeach ?>
 		</ul>
-	</body>
-
-</html>

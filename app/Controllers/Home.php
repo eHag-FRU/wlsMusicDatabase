@@ -7,7 +7,7 @@ class Home extends BaseController
     public function index()
     {
         //The CSS file for the Search page, general configuration 
-        $CSS = 'app/Views/CSS/index.css';
+        $CSS = ("assets/CSS/index.css");
 
         //The data array to be passed into the view to be used
         $data = [
