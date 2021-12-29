@@ -38,7 +38,7 @@ class music extends Model {
         Function to find all pieces based on the type
         that is selected at the search page
 
-        @arguments $arr - Array of the form input
+        @arguments array $arr  Array of the form input
 
         @return The search results
     */
@@ -64,7 +64,7 @@ class music extends Model {
     /*
         A function to add a piece of music to the database
 
-        @arguments arr - The array of POST form information
+        @arguments array $arr  The array of POST form information
 
     */
     public function add($arr) {
@@ -90,25 +90,17 @@ class music extends Model {
         //Goes ahead and adds the piece to the database
         $builder -> insert($data);
 
-        //Overwrites the data variable to be used to generate the blank add page when the add is done.
-        $data = [
-            'title' => 'Add'
-        ];
-
-        //Sends the user back to the add page to add another piece
-        echo view('templates/header.php', $data);
-        echo view('add', $data);
-        echo view('templates/footer.php');
+        
     }
 
 
 
     /*
-        A fucntion to find a piece by the title
+        A function to find a piece by the title
 
-        @arguments $arr - the array of POST form data from the search page
+        @arguments array $arr  the array of POST form data from the search page
 
-        @return The results of the search
+        @return array The results of the search
 
     */
     public function findPieceByTitle($arr) {
@@ -121,6 +113,9 @@ class music extends Model {
 
         // Defines the select part of the query: SELECT *
         $builder -> select('*');
+
+        //Defines the where part of the query: WHERE {type}
+        $builder -> where('Type', $arr['type']);
 
         // Defines the where and like part of the query: WHERE {The First Argument} LIKE {The Second Argument}
         $builder -> like('Title', $arr['title']);
@@ -144,7 +139,6 @@ class music extends Model {
         @return The search results
     */
     public function findPieceByArranger($arr) {
-        $arranger = $arr['Arranger'];
 
         //Connects to the default (and only), database
         $db = \Config\Database::connect();
@@ -152,8 +146,38 @@ class music extends Model {
         //Sets up a Query Builder around the DB in the table Piece
         $builder = $db -> table('piece');
 
+        //select
+        $builder -> select('*');
+
+        //Defines the where part of the query: WHERE {type}
+        $builder -> where('Type', $arr['type']);
+        
         // Defines the where part of the query: WHERE {The arguments}
-        $builder -> where('Arranger', $arranger);
+        $builder -> where('Arranger', $arr['Arranger']);
+
+
+
+
+        //Runs and retrieves the query results
+        $result = $builder -> get();
+
+        //Return the results
+        return $result -> getResultArray();
+    }
+
+    public function getPieceByID($id) {
+        //Connects to the default (and only), database
+        $db = \Config\Database::connect();
+
+        //Sets up a Query Builder around the DB in the table Piece
+        $builder = $db -> table('piece');
+
+        //select
+        $builder -> select('*');
+
+        //Defines the where part of the query: WHERE {type}
+        $builder -> where('Piece_ID', $id);
+
 
 
         //Runs and retrieves the query results

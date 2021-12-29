@@ -32,6 +32,16 @@ class Add extends BaseController {
 
 		//Calls the function in the model with the already cleansed input
 		$model -> add($temp);
+
+		//Defines the data to be passed to the view
+        $data = [
+            'title' => 'Add'
+        ];
+
+        //Sends the user back to the add page to add another piece
+        echo view('templates/header.php', $data);
+        echo view('add', $data);
+        echo view('templates/footer.php');
 	}
 
 

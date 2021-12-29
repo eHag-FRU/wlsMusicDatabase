@@ -11,7 +11,7 @@
 					<br>
 						
 					<lable for="Title">Title:</lable>
-					<input type="text" class="Title" id="Title" name="form[title]" placeholder="Crazy Train">
+					<input type="text" class="Title" id="Title" name="form[title]" placeholder="Crazy Train" default='NULL'>
 
 					<br>
 

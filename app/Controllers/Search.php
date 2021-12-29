@@ -25,16 +25,13 @@ class Search extends BaseController {
 		$searchResults = NULL;
 
 		//Checks the input to determine what search to do, ALL use the piece type
-		$titleCheck = empty($temp['title']) || strcasecmp($temp['title'], '') == 0;
-
-		$arrangerCheck = empty($temp['arranger']) || strcasecmp($temp['arranger'], '') == 0;
 
 		//IF the arranger is empty and the title is empty, look for everything
-		if ($titleCheck && $arrangerCheck) {
+		if (false) {
 			$searchResults = $model -> all($temp);
 
 		//Else if the title is empty, look for pieces by arranger
-		} else if($arrangerCheck) {
+		} else if(false) {
 			$searchResults = $model -> findPieceByArranger($temp);
 
 		//Else look for piece by title
