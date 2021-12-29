@@ -11,7 +11,7 @@
 
 	<body>
 
-		<div class="outerGrid mainGrid Content">
+		<div class="mainGrid">
 			<header class="header">
 		
 				<h1>West Liberty-Salem Band Music Library</h1>
@@ -31,6 +31,10 @@
 					<li>&nbsp</li>
 
 					<li>About</li>
+
+					<li><a href='/Add'>Add a Piece</a></li>
+
+					<li><a href='/phpmyadmin'>PHPMyAdmin</a></li>
 
 					
 

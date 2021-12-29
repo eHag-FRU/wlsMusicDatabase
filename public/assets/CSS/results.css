@@ -1,0 +1,32 @@
+* {
+    font-family: Calibri;
+}
+
+.mainGrid {
+    display: grid;
+    grid-template: 
+        "Header   Header    Header    Header     Header " 1fr 
+        "Nav      Nav       Nav       Nav        Nav    " 0.5fr 
+        ".        .         .         .          .      " 0.25fr 
+        "Result        Result    Result    Result     .      " 0.5fr 
+        "Result        Result    Result    Result     .      " 1fr 
+        "Result        Result    Result    Result     .      " 1fr 
+        "Result        Result    Result    Result     .      " 1fr 
+        ".        .         .         .          .      " 0.5fr 
+        "Footer   Footer    Footer    Footer     Footer " 1fr 
+        / 1fr       1fr      1fr       1fr        1fr;
+}
+
+.Result {
+    grid-area: Result;
+}
+
+.item {
+   /*Sets the border to separate each listing*/
+    border: solid;
+    border-color: grey;
+}
+
+.item h2 {
+    justify-content: right;
+}

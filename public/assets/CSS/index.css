@@ -102,3 +102,7 @@ header {
     width: 250px;
     height: 300px;
 }
+
+.Search_Header {
+    align-content: center;
+}

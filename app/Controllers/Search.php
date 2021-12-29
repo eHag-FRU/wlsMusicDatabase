@@ -6,8 +6,9 @@ use App\Models\music;
 
 class Search extends BaseController {
 	
-	//Function to initiate the search.
+	//Function to check inputs to find out what search to preform
 	public function index() {
+		
 		//Array to hold form data
 		$temp = [];
 
@@ -20,7 +21,7 @@ class Search extends BaseController {
 
 		//Defining the data to be passed onto the view
 		$data = [
-			'results' => $model->search($temp),
+			'results' => $model->all($temp),
 			'title' => 'Results',
 		];
 
@@ -32,10 +33,11 @@ class Search extends BaseController {
 			content
 			footer
 		*/
+		
 		echo view('templates/header.php', $data);
 		echo view('results', $data);
 		echo view('templates/footer.php');
-	}
+	}	
 }
 
 ?>

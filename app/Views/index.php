@@ -4,9 +4,14 @@
 
 
 			<main class="Search">
+				<h2 class="Search_Header">Search</h2>
+				
 				<form action="/Search" method="POST">
+
+					<br>
+						
 					<lable for="Title">Title:</lable>
-					<input type="text" class="Title" id="Title" name="form[title]" placeholder="Crazy Train" required>
+					<input type="text" class="Title" id="Title" name="form[title]" placeholder="Crazy Train">
 
 					<br>
 
@@ -23,6 +28,8 @@
 					<input type="text" class='Arranger' name="form[Arranger]">
 
 				<form>
+
+				<p><em>*A blank search will search for everything</em></p>
 
 				<br><button type="submit">Submit</button>
 			</main>

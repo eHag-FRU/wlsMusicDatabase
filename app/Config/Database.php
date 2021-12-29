@@ -33,8 +33,8 @@ class Database extends Config
     public $default = [
         'DSN'      => '',
         'hostname' => 'localhost',
-        'username' => 'root',
-        'password' => '',
+        'username' => 'wlsMusic',
+        'password' => '*Nu*U1Wg.h2(_K9x',
         'database' => 'music',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',

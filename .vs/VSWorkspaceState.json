@@ -2,7 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\Models"
+    "\\app\\Controllers",
+    "\\app\\Models",
+    "\\app\\Views",
+    "\\public",
+    "\\public\\assets",
+    "\\public\\assets\\CSS"
   ],
   "SelectedNode": "\\app\\Models\\music.php",
   "PreviewInSolutionExplorer": false
