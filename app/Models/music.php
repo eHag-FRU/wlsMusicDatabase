@@ -34,20 +34,39 @@ class music extends Model {
 
     }*/
 
-    public function all() {
+    /*
+        Function to find all pieces based on the type
+        that is selected at the search page
+
+        @arguments $arr - Array of the form input
+
+        @return The search results
+    */
+    public function all($arr) {
         //Connects to the default (and only), database
         $db = \Config\Database::connect();
 
         //Sets up a Query Builder around the DB in the table Piece
         $builder = $db -> table('piece');
+        
+        //Where type is of the type selected
+        $builder -> where('Type', $arr['type']);
 
-        //Returns the results from the query: SELECT * FROM PIECE
+        //Gets the results and stores them in results var
         $result = $builder -> get();
 
         //Return the results
         return $result -> getResultArray();
     }
 
+
+
+    /*
+        A function to add a piece of music to the database
+
+        @arguments arr - The array of POST form information
+
+    */
     public function add($arr) {
         //Connects to the default (and only), database
         $db = \Config\Database::connect();
@@ -82,8 +101,17 @@ class music extends Model {
         echo view('templates/footer.php');
     }
 
+
+
+    /*
+        A fucntion to find a piece by the title
+
+        @arguments $arr - the array of POST form data from the search page
+
+        @return The results of the search
+
+    */
     public function findPieceByTitle($arr) {
-        $title = $arr['title'];
 
         //Connects to the default (and only), database
         $db = \Config\Database::connect();
@@ -91,15 +119,45 @@ class music extends Model {
         //Sets up a Query Builder around the DB in the table Piece
         $builder = $db -> table('piece');
 
-        // Defines the select part of the query: SELECT {The arguments}
-        $builder -> select('Title');
+        // Defines the select part of the query: SELECT *
+        $builder -> select('*');
 
-        // Defines the where part of the query: WHERE {The arguments}
-        $builder -> where('Title', $title);
+        // Defines the where and like part of the query: WHERE {The First Argument} LIKE {The Second Argument}
+        $builder -> like('Title', $arr['title']);
 
 
         //Runs and retrieves the query results
-        $result -> get();
+        $result = $builder -> get();
+
+        //Return the results
+        return $result -> getResultArray();
+    }
+
+
+
+
+    /*
+        A function to find pieces made by a specified Arranger
+
+        @arguments $arr - the POST form data from the search page
+
+        @return The search results
+    */
+    public function findPieceByArranger($arr) {
+        $arranger = $arr['Arranger'];
+
+        //Connects to the default (and only), database
+        $db = \Config\Database::connect();
+
+        //Sets up a Query Builder around the DB in the table Piece
+        $builder = $db -> table('piece');
+
+        // Defines the where part of the query: WHERE {The arguments}
+        $builder -> where('Arranger', $arranger);
+
+
+        //Runs and retrieves the query results
+        $result = $builder -> get();
 
         //Return the results
         return $result -> getResultArray();

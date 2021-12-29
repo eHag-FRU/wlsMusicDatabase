@@ -5,6 +5,8 @@ namespace App\Controllers;
 use App\Models\music;
 
 class Search extends BaseController {
+
+	
 	
 	//Function to check inputs to find out what search to preform
 	public function index() {
@@ -19,9 +21,31 @@ class Search extends BaseController {
 
 		$model = new music();
 
+		//Create the results variable, which will hold the results of the search
+		$searchResults = NULL;
+
+		//Checks the input to determine what search to do, ALL use the piece type
+		$titleCheck = empty($temp['title']) || strcasecmp($temp['title'], '') == 0;
+
+		$arrangerCheck = empty($temp['arranger']) || strcasecmp($temp['arranger'], '') == 0;
+
+		//IF the arranger is empty and the title is empty, look for everything
+		if ($titleCheck && $arrangerCheck) {
+			$searchResults = $model -> all($temp);
+
+		//Else if the title is empty, look for pieces by arranger
+		} else if($arrangerCheck) {
+			$searchResults = $model -> findPieceByArranger($temp);
+
+		//Else look for piece by title
+		} else {
+			$searchResults = $model -> findPieceByTitle($temp);
+		}
+
+
 		//Defining the data to be passed onto the view
 		$data = [
-			'results' => $model->all($temp),
+			'results' => $searchResults,
 			'title' => 'Results',
 		];
 

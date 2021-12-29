@@ -3,12 +3,8 @@
     "",
     "\\app",
     "\\app\\Controllers",
-    "\\app\\Models",
-    "\\app\\Views",
-    "\\public",
-    "\\public\\assets",
-    "\\public\\assets\\CSS"
+    "\\app\\Views"
   ],
-  "SelectedNode": "\\app\\Models\\music.php",
+  "SelectedNode": "\\app\\Views\\index.php",
   "PreviewInSolutionExplorer": false
 }
