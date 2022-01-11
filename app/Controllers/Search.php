@@ -6,13 +6,27 @@ use App\Models\music;
 
 class Search extends BaseController {
 
-	
-	
 	//Function to check inputs to find out what search to preform
 	public function index() {
 		
+		//Double checks if the form has been posted, if not then redirection happens
+		//This prevents the user from seeing any error screens
+		if (!array_key_exists('form', $_POST)){
+			$temp = ['title' => 'Search'];
+
+			echo view('templates/header.php', $temp );
+			echo view('index.php', $temp);
+			echo view('templates/footer.php');
+
+			exit();
+		}
+		
+
+
 		//Array to hold form data
 		$temp = [];
+
+
 
 		//Cleanse all of the form data and put in temp[]
 		foreach($_POST['form'] as $key => $value) {
@@ -21,23 +35,31 @@ class Search extends BaseController {
 
 		$model = new music();
 
+
 		//Create the results variable, which will hold the results of the search
 		$searchResults = NULL;
+
+
 
 		//Checks the input to determine what search to do, ALL use the piece type
 
 		//IF the arranger is empty and the title is empty, look for everything
-		if (false) {
+		if ($temp['title'] == NULL && $temp['Arranger'] == NULL) {
 			$searchResults = $model -> all($temp);
 
 		//Else if the title is empty, look for pieces by arranger
-		} else if(false) {
+		} else if($temp['title'] == NULL) {
 			$searchResults = $model -> findPieceByArranger($temp);
 
-		//Else look for piece by title
-		} else {
+		//Else if the arranger is empty look for piece by title
+		} else if ($temp['Arranger'] == NULL){
 			$searchResults = $model -> findPieceByTitle($temp);
+
+		//Else look for the piece by both arranger and title
+		} else {
+			$searchResults = $model -> findPieceByArrangerAndTitle($temp);
 		}
+
 
 
 		//Defining the data to be passed onto the view
@@ -47,6 +69,7 @@ class Search extends BaseController {
 		];
 
 
+
 		/*
 			Stacks the view as follows
 
@@ -54,7 +77,6 @@ class Search extends BaseController {
 			content
 			footer
 		*/
-		
 		echo view('templates/header.php', $data);
 		echo view('results', $data);
 		echo view('templates/footer.php');

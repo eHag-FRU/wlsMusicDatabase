@@ -8,11 +8,13 @@
 				
 				<form action="/Search" method="POST">
 
-					<br>
-						
+					
+					
+					
 					<lable for="Title">Title:</lable>
 					<input type="text" class="Title" id="Title" name="form[title]" placeholder="Crazy Train" default='NULL'>
 
+					<br>
 					<br>
 
 					<lable for="Type">Piece Type: </lable>
@@ -23,15 +25,28 @@
 					</select>
 
 					<br>
+					<br>
 
 					<lable for="Arranger">Arranger</lable>
-					<input type="text" class='Arranger' name="form[Arranger]">
+					<input type="text" class='Arranger' name="form[Arranger]" default='NULL'>
 
-				<form>
+					<br>
+					<br>
+						
+					<lable for="Composer">Composer:</lable>
+					<input type="text" class="Composer" id="Composer" name="form[composer]" placeholder="Crazy Train" default='NULL'>
 
-				<p><em>*A blank search will search for everything</em></p>
+					<br>
+					<br>
+						
+					<lable for="LibNumber">Music Library Number:</lable>
+					<input type="number" class="LibNumber" id="LibNumber" name="form[LibNumber]" placeholder="Crazy Train" default='NULL'>
 
-				<br><button type="submit">Submit</button>
+					<p><em>*A blank search will search for everything</em></p>
+
+					<br><button type="submit">Submit</button><br>
+	
+				</form>				
 			</main>
 
 

@@ -8,7 +8,7 @@
 			<?php foreach($results as $piece):?>
 
 				<ul class="item">
-					<li><h2><a href='/View/getView/<?= $piece['Piece_ID']?>'><?= $piece['Title'] ?></a></h2></li>
+					<li><h2><a href='/View/view/<?= $piece['Piece_ID']?>'><?= $piece['Title'] ?></a></h2></li>
 
 					<li><?= $piece['Arranger'] ?></li>
 

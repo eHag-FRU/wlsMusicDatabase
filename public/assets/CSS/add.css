@@ -23,7 +23,7 @@
     position: center;
     justify-content: center;
     /*Grid Area and Display Tatic*/
-    display: grid;
+    display: inline-grid;
     grid-area: Add;
     /*The boarder and shadow effects to bring users attention to the search form */
     border-style: groove;

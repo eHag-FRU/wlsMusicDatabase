@@ -11,29 +11,6 @@ class music extends Model {
 
     protected $returntype = 'array';
 
-
-    /*public function search($arr) {
-        $title = $arr['title'];
-
-        if (strcasecmp($title, '') == 0) {
-            
-            //Connects to the default (and only), database
-            $db = \Config\Database::connect();
-
-            //Sets up a Query Builder around the DB in the table Piece
-            $builder = $db -> table('piece');
-
-            //Returns the results from the query: SELECT * FROM PIECE
-            $result = $builder -> get();
-
-            //Return the results
-            return $result -> getResultArray();
-        } else if (isSet($title)) {
-
-        }
-
-    }*/
-
     /*
         Function to find all pieces based on the type
         that is selected at the search page
@@ -60,7 +37,6 @@ class music extends Model {
     }
 
 
-
     /*
         A function to add a piece of music to the database
 
@@ -83,6 +59,8 @@ class music extends Model {
         $data = [
             'Title' => $arr['title'] ,
             'Arranger' => $arr['Arranger'] ,
+            'Composer' => $arr['composer'],
+            'LibNumber' => $arr['LibNumber'],
             'Type' => $arr['type'],
             'Last_Played' =>  $arr['Last_Played'],
         ];
@@ -165,6 +143,8 @@ class music extends Model {
         return $result -> getResultArray();
     }
 
+
+
     public function getPieceByID($id) {
         //Connects to the default (and only), database
         $db = \Config\Database::connect();
@@ -179,6 +159,31 @@ class music extends Model {
         $builder -> where('Piece_ID', $id);
 
 
+
+        //Runs and retrieves the query results
+        $result = $builder -> get();
+
+        //Return the results
+        return $result -> getResultArray();
+    }
+
+
+
+    public function findPieceByArrangerAndTitle($arr) {
+        //Connects to the default (and only), database
+        $db = \Config\Database::connect();
+
+        //Sets up a Query Builder around the DB in the table Piece
+        $builder = $db -> table('piece');
+
+        //select
+        $builder -> select('*');
+
+        //Defines the where part of the query: WHERE {like}
+        $builder -> where('Title', $arr['title']);
+
+        //Defines the SECOND where clause of the statement: {like}
+        $builder -> like('Arranger', $arr['Arranger']);
 
         //Runs and retrieves the query results
         $result = $builder -> get();
