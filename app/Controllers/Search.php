@@ -61,6 +61,14 @@ class Search extends BaseController {
 		}
 
 
+		switch() {
+			case ($temp['title'] == NULL && $temp['Arranger'] == NULL && $temp['Last_Played'] == NULL && $temp['LibNumber'] == NULL):
+				$searchResults = $model -> all($temp);
+				break;
+			case ($temp['title'] == NULL && $temp['Last_Played'] == NULL && $temp['LibNumber'] == NULL):
+				
+		}
+
 
 		//Defining the data to be passed onto the view
 		$data = [

@@ -121,6 +121,9 @@ nb-configuration.xml
 # Visual Studio Code
 .vscode/
 
+#Visual Studio 2019
+.vs/
+
 /results/
 /phpunit*.xml
 /.phpunit.*.cache

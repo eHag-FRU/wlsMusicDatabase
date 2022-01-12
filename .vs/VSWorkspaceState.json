@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\app"
+    "\\app",
+    "\\app\\Controllers",
+    "\\app\\Models",
+    "\\app\\Views"
   ],
-  "SelectedNode": "\\app",
+  "SelectedNode": "\\app\\Models\\music.php",
   "PreviewInSolutionExplorer": false
 }

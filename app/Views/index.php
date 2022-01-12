@@ -40,7 +40,14 @@
 					<br>
 						
 					<lable for="LibNumber">Music Library Number:</lable>
-					<input type="number" class="LibNumber" id="LibNumber" name="form[LibNumber]" placeholder="Crazy Train" default='NULL'>
+					<input type="number" class="LibNumber" id="LibNumber" name="form[LibNumber]" default='NULL'>
+
+					<br>
+					<br>
+						
+					<lable for="YearLastPlayed">Year Last Played:</lable>
+					<input type="text" maxlength="4" minlength="4" class="YearLastPlayed" id="YearLastPlayed" name="form[YearLastPlayed]" default='NULL'>
+
 
 					<p><em>*A blank search will search for everything</em></p>
 

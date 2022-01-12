@@ -36,7 +36,7 @@
 				<br>
 
 				<label for="Last_Played">Last Year Played</label>
-				<input type="number" class='Last_Played' name="form[Last_Played]">
+				<input type="number" minlength="4" maxlength="4" class='Last_Played' name="form[Last_Played]">
 
 				<br>
 				<br>

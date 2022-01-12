@@ -191,4 +191,37 @@ class music extends Model {
         //Return the results
         return $result -> getResultArray();
     }
+
+    /*
+        A function to find a piece by the title
+
+        @arguments array $arr  the array of POST form data from the search page
+
+        @return array The results of the search
+
+    */
+    public function findPieceByTitle($arr) {
+
+        //Connects to the default (and only), database
+        $db = \Config\Database::connect();
+
+        //Sets up a Query Builder around the DB in the table Piece
+        $builder = $db -> table('piece');
+
+        // Defines the select part of the query: SELECT *
+        $builder -> select('*');
+
+        //Defines the where part of the query: WHERE {type}
+        $builder -> where('Type', $arr['type']);
+
+        // Defines the where and like part of the query: WHERE {The First Argument} LIKE {The Second Argument}
+        $builder -> like('Title', $arr['title']);
+
+
+        //Runs and retrieves the query results
+        $result = $builder -> get();
+
+        //Return the results
+        return $result -> getResultArray();
+    }
 }
