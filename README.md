@@ -9,10 +9,10 @@ enduser experience when deployed.
 My PHP skills learned in Franklin University's WEBD-263: Web Infromation Systems course are being pushed and expanded upon when working on this project.
 
 \
-Languages and Frameworks Used:
+Languages, Frameworks, and Server Software Used:
 
 * PHP 8
 * HTML 5
 * CSS 3
 * CodeIgniter 4
-* CodeIgniter 4 Alerts (Made by TaterSoft here on GitHub)
+* XAMPP Web Server
