@@ -73,78 +73,6 @@ class music extends Model {
 
 
 
-    /*
-        A function to find a piece by the title
-
-        @arguments array $arr  the array of POST form data from the search page
-
-        @return array The results of the search
-
-    */
-    public function findPieceByTitle($arr) {
-
-        //Connects to the default (and only), database
-        $db = \Config\Database::connect();
-
-        //Sets up a Query Builder around the DB in the table Piece
-        $builder = $db -> table('piece');
-
-        // Defines the select part of the query: SELECT *
-        $builder -> select('*');
-
-        //Defines the where part of the query: WHERE {type}
-        $builder -> where('Type', $arr['type']);
-
-        // Defines the where and like part of the query: WHERE {The First Argument} LIKE {The Second Argument}
-        $builder -> like('Title', $arr['title']);
-
-
-        //Runs and retrieves the query results
-        $result = $builder -> get();
-
-        //Return the results
-        return $result -> getResultArray();
-    }
-
-
-
-
-    /*
-        A function to find pieces made by a specified Arranger
-
-        @arguments $arr - the POST form data from the search page
-
-        @return The search results
-    */
-    public function findPieceByArranger($arr) {
-
-        //Connects to the default (and only), database
-        $db = \Config\Database::connect();
-
-        //Sets up a Query Builder around the DB in the table Piece
-        $builder = $db -> table('piece');
-
-        //select
-        $builder -> select('*');
-
-        //Defines the where part of the query: WHERE {type}
-        $builder -> where('Type', $arr['type']);
-        
-        // Defines the where part of the query: WHERE {The arguments}
-        $builder -> where('Arranger', $arr['Arranger']);
-
-
-
-
-        //Runs and retrieves the query results
-        $result = $builder -> get();
-
-        //Return the results
-        return $result -> getResultArray();
-    }
-
-
-
     public function getPieceByID($id) {
         //Connects to the default (and only), database
         $db = \Config\Database::connect();
@@ -168,39 +96,16 @@ class music extends Model {
     }
 
 
-
-    public function findPieceByArrangerAndTitle($arr) {
-        //Connects to the default (and only), database
-        $db = \Config\Database::connect();
-
-        //Sets up a Query Builder around the DB in the table Piece
-        $builder = $db -> table('piece');
-
-        //select
-        $builder -> select('*');
-
-        //Defines the where part of the query: WHERE {like}
-        $builder -> where('Title', $arr['title']);
-
-        //Defines the SECOND where clause of the statement: {like}
-        $builder -> like('Arranger', $arr['Arranger']);
-
-        //Runs and retrieves the query results
-        $result = $builder -> get();
-
-        //Return the results
-        return $result -> getResultArray();
-    }
-
     /*
-        A function to find a piece by the title
+        A function to find a piece by title, arranger, composer,
+		library number, year last played, and piece type.
 
         @arguments array $arr  the array of POST form data from the search page
 
         @return array The results of the search
 
     */
-    public function findPieceByTitle($arr) {
+    public function findPieceSearch($arr) {
 
         //Connects to the default (and only), database
         $db = \Config\Database::connect();
@@ -211,12 +116,33 @@ class music extends Model {
         // Defines the select part of the query: SELECT *
         $builder -> select('*');
 
-        //Defines the where part of the query: WHERE {type}
-        $builder -> where('Type', $arr['type']);
-
-        // Defines the where and like part of the query: WHERE {The First Argument} LIKE {The Second Argument}
-        $builder -> like('Title', $arr['title']);
-
+		//Loops through each of the values in the array that hold the search criteria
+		foreach($arr as $key => $value) {
+			
+			//Make the where statement match the key and 
+			//value to the database collumn header, using a switch statement to ensure the proper where statement is used
+			switch($key) {
+			    case 'title':
+                    $builder -> like('Title', $value);
+                    break;
+                case 'type':
+                    $builder -> like('Type', $value);
+                    break;
+                case 'Arranger':
+                    $builder -> like('Arranger', $value);
+                    break;
+                case 'composer':
+                    $builder -> like('Composer', $value);
+                    break;
+                case 'LibNumber':
+                    $builder -> like('LibNumber', $value);
+                    break;
+                case 'YearLastPlayed':
+                    $builder -> like('Last_Played', $value);
+                    break;
+			};
+			
+		};
 
         //Runs and retrieves the query results
         $result = $builder -> get();

@@ -30,44 +30,21 @@ class Search extends BaseController {
 
 		//Cleanse all of the form data and put in temp[]
 		foreach($_POST['form'] as $key => $value) {
-			$temp[$key] = esc($value);
+			//Only grabs the non NULL values (the criteria the user searched for)
+			if ($value != NULL) {
+				$temp[$key] = esc($value);
+			}
+			
 		}
 
+
+		//Creates a model instance
 		$model = new music();
 
 
 		//Create the results variable, which will hold the results of the search
-		$searchResults = NULL;
+		$searchResults = $model -> findPieceSearch($temp);
 
-
-
-		//Checks the input to determine what search to do, ALL use the piece type
-
-		//IF the arranger is empty and the title is empty, look for everything
-		if ($temp['title'] == NULL && $temp['Arranger'] == NULL) {
-			$searchResults = $model -> all($temp);
-
-		//Else if the title is empty, look for pieces by arranger
-		} else if($temp['title'] == NULL) {
-			$searchResults = $model -> findPieceByArranger($temp);
-
-		//Else if the arranger is empty look for piece by title
-		} else if ($temp['Arranger'] == NULL){
-			$searchResults = $model -> findPieceByTitle($temp);
-
-		//Else look for the piece by both arranger and title
-		} else {
-			$searchResults = $model -> findPieceByArrangerAndTitle($temp);
-		}
-
-
-		switch() {
-			case ($temp['title'] == NULL && $temp['Arranger'] == NULL && $temp['Last_Played'] == NULL && $temp['LibNumber'] == NULL):
-				$searchResults = $model -> all($temp);
-				break;
-			case ($temp['title'] == NULL && $temp['Last_Played'] == NULL && $temp['LibNumber'] == NULL):
-				
-		}
 
 
 		//Defining the data to be passed onto the view

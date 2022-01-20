@@ -11,10 +11,12 @@ class View extends BaseController {
 
 		$temp = $model -> getPieceByID($id);
 
-		
+		$temp = $temp[0];
+
 
 		$data = [
 			'title' => 'View',
+			'form' => $temp 
 		];
 
 		echo view('templates/header.php', $data);
