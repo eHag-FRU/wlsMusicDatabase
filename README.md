@@ -15,3 +15,4 @@ Languages and Frameworks Used:
 * HTML 5
 * CSS 3
 * CodeIgniter 4
+* CodeIgniter 4 Alerts (Made by TaterSoft here on GitHub)
