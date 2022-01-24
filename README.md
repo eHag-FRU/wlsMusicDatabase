@@ -7,6 +7,7 @@ enduser experience when deployed.
 
 \
 My PHP skills learned in Franklin University's WEBD-263: Web Infromation Systems course are being pushed and expanded upon when working on this project.
+I had not used a PHP framework, so this is helpping me learn CodeIgniter along the way too.
 
 \
 Languages, Frameworks, and Server Software Used:
