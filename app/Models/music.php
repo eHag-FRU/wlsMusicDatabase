@@ -11,13 +11,13 @@ class music extends Model {
 
     protected $returntype = 'array';
 
-    /*
-        Function to find all pieces based on the type
-        that is selected at the search page
-
-        @arguments array $arr  Array of the form input
-
-        @return The search results
+    /**
+    *    Function to find all pieces based on the type
+    *    that is selected at the search page
+    *
+    *    @param  $arr -  Array of the form input
+    *
+    *    @return The search results
     */
     public function all($arr) {
         //Connects to the default (and only), database
@@ -38,10 +38,10 @@ class music extends Model {
 
 
     /*
-        A function to add a piece of music to the database
-
-        @arguments array $arr  The array of POST form information
-
+    *    A function to add a piece of music to the database
+    *
+    *    @param  $arr -  The array of POST form information
+    *
     */
     public function add($arr) {
         //Connects to the default (and only), database
@@ -71,8 +71,12 @@ class music extends Model {
         
     }
 
-
-
+    /**
+    *   Gets the piece from the database and returns it
+    *
+    *   @param    $id -  The id of the piece
+    *   @return   the result of the databse search in an array
+    */
     public function getPieceByID($id) {
         //Connects to the default (and only), database
         $db = \Config\Database::connect();
@@ -95,6 +99,8 @@ class music extends Model {
         return $result -> getResultArray();
     }
 
+
+
     public function pieceUpdate($arr) {
 
          //Connects to the default (and only), database
@@ -108,14 +114,14 @@ class music extends Model {
     }
 
 
-    /*
-        A function to find a piece by title, arranger, composer,
-		library number, year last played, and piece type.
-
-        @arguments array $arr  the array of POST form data from the search page
-
-        @return array The results of the search
-
+    /**
+    *    A function to find a piece by title, arranger, composer,
+	*	library number, year last played, and piece type.
+    *
+    *    @arguments array $arr  the array of POST form data from the search page
+    *
+    *    @return array The results of the search
+    *
     */
     public function findPieceSearch($arr) {
 
