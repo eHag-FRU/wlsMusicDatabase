@@ -31,7 +31,7 @@ class Search extends BaseController {
 		//Cleanse all of the form data and put in temp[]
 		foreach($_POST['form'] as $key => $value) {
 			//Only grabs the non NULL values (the criteria the user searched for)
-			if ($value != NULL) {
+			if (!isset($value)) {
 				$temp[$key] = esc($value);
 			}
 			

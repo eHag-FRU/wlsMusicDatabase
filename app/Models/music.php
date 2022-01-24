@@ -95,6 +95,18 @@ class music extends Model {
         return $result -> getResultArray();
     }
 
+    public function pieceUpdate($arr) {
+
+         //Connects to the default (and only), database
+        $db = \Config\Database::connect();
+
+        //Sets up a Query Builder around the DB in the table Piece
+        $builder = $db -> table('piece');
+
+        
+        
+    }
+
 
     /*
         A function to find a piece by title, arranger, composer,

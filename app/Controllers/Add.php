@@ -19,6 +19,7 @@ class Add extends BaseController {
         echo view('templates/footer.php');
 	}
 
+
 	public function addPiece() {
 		 $model = new Music();
 

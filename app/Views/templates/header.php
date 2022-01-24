@@ -6,7 +6,7 @@
 
 		<link rel="icon" href="assets/Images/favicon.ico">
 
-		<link rel="stylesheet" href="assets/CSS/index.css">
+		<link rel="stylesheet" type="text/css" href="<?= base_url('assets/CSS/index.css')?>">
 	</head>
 
 	<body>
@@ -21,22 +21,31 @@
 			<nav class="Nav">
 				<ul>
 					
+					<li>&nbsp</li>
+
 					<li><a href="/">Search</a></li>
 
 
 					<li>&nbsp</li>
+					
+					
+					<li><a href='/Add'>Add a Piece</a></li>
+					
 
 					<li><a href="https://github.com/eHag-FRU/wlsMusicDatabase">GitHub Repository</a></li>
 
+
 					<li>&nbsp</li>
 
-					<li>About</li>
 
-					<li><a href='/Add'>Add a Piece</a></li>
+					<li><a href="/About">About</a></li>
+
+
+					<li>&nbsp</li>
 
 					<li><a href='/phpmyadmin'>PHPMyAdmin</a></li>
 
-					
+					<li>&nbsp</li>
 
 				</ul>
 			</nav>
