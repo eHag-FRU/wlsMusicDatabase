@@ -2,8 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\Controllers"
+    "\\app\\assets",
+    "\\app\\assets\\CSS",
+    "\\app\\assets\\Images",
+    "\\app\\Views",
+    "\\app\\Views\\templates"
   ],
-  "SelectedNode": "\\app\\Controllers\\Add.php",
+  "SelectedNode": "\\app\\assets\\Images\\favicon.ico",
   "PreviewInSolutionExplorer": false
 }

@@ -3,24 +3,42 @@
 
 
 		<!--Lists attributes of each piece as list items and a header -->
-		<ul class='Result'>
+		<table class="Results">
+
+			<tr>
+				<th>Title</th>
+				<th>Arranger</th>
+				<th>Composer</th>
+				<th>Music Library Number</th>
+				<th>Type</th>
+				<th>Year Last Played</th>
+				<th>Actions</th>
+			</tr>
 
 			<?php foreach($results as $piece):?>
 
-				<ul class="item">
-					<li><h2><a href='/Edit/edit/<?= $piece['Piece_ID']?>'><?= $piece['Title'] ?></a></h2></li>
+				<tr>
+					<td><a href='/Edit/edit/<?= $piece['Piece_ID']?>'><?= $piece['Title'] ?></a></td>
 
-					<li><?= $piece['Arranger'] ?></li>
+					<td><?= $piece['Arranger'] ?></td>
 
-					<li><?= $piece['Piece_ID'] ?></li>
+					<td><?= $piece['Composer'] ?></td>
 
-					<li><?= $piece['Last_Played'] ?></li>
+					<td><?= $piece['LibNumber'] ?></td>
 
-					<li><?= $piece['Type'] ?></li>
-				</ul>
+					<td><?= $piece['Type'] ?></td>
 
-				<!-- Adds a break between each piece -->
-			<br>
+					<td><?= $piece['Last_Played'] ?></td>
+
+					<td>
+						<ul>
+							<li><a href="/View/Played/<?= $piece['Piece_ID'] ?>">Played</a></li>
+							<li><a href="/Edit/deletePiece/<?= $piece['Piece_ID'] ?>">Delete</a></li>
+						</ul>
+					</td>
+
+				</tr>
+
 			<?php endforeach ?>
 		
-		</ul>
+		</table>

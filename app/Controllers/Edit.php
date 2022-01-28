@@ -44,6 +44,42 @@ class Edit extends BaseController {
 	}
 
 
+	/**
+	*	Function to update the last year played to the current date for a piece
+	*
+	*	@param		$id -	The id of the piece to have the year last played updated
+	*/
+	public function lastPlayedUpdate($id) {
+		
+	}
+
+
+	/*
+	*	Function to delete a piece from the database based on its ID
+	*
+	*	@param		$id -	The ID of the piece to be deleted
+	*/
+	public function deletePiece($id) {
+		//Initlizes a new model instance
+		$model = new music();
+
+		//Deletes the piece from the database
+		$model -> deletePiece($id);
+
+		//The data to be passed to the view that is going to be rendered
+		$data = [
+			'title' => 'Search'
+		];
+
+
+		return redirect()->back()->withInput();
+	}
+
+
+
+
+
+
 
 	/**
 	*	Function to post the update made by the user,
@@ -75,6 +111,12 @@ class Edit extends BaseController {
 
 		//Sends the information to the model to be updated in the database 
 		$model -> pieceUpdate($id, $temp);
+
+		$data = [
+			'title' => 'Edit'
+		];
+
+		return redirect()->back()->withInput();
 
 	}
 

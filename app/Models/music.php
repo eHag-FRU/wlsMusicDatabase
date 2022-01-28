@@ -101,7 +101,7 @@ class music extends Model {
 
 
 
-    public function pieceUpdate($arr) {
+    public function pieceUpdate($id, $arr) {
 
          //Connects to the default (and only), database
         $db = \Config\Database::connect();
@@ -109,8 +109,54 @@ class music extends Model {
         //Sets up a Query Builder around the DB in the table Piece
         $builder = $db -> table('piece');
 
+        //Sets the where, this specifies the piece to update
+        $builder -> where('Piece_ID', $id);
         
+        //Sets up an array of the data to be sent in
+        $data = [
+            'LibNumber' => $arr['LibNumber'],
+            'Title' => $arr['title'],
+            'Composer' => $arr['composer'],
+            'Arranger' => $arr['Arranger'],
+            'Last_Played' => $arr['Last_Played']
+        ];
+
+        //Checks to see if the type has been changed, if so add it to the array of information to be updated.
+        if(array_key_exists('Type', $arr)) {
+            $data['Type'] =  $arr['Type'];
+        }
+
+        //Sets each of the fields to the corrisponding value
+        foreach ($data as $key => $value) {
+            $builder -> set($key, $value);
+        }
+
+        //Specifies what information to update
+        $builder -> update();
+    }
+
+
+    /**
+    *    Function that deletes a piece from the database based on the supplied piece ID
+    *
+    *   @param  $id -   The id of the piece to be deleted 
+    */
+
+    public function deletePiece($id) {
+
+         //Connects to the default (and only), database
+        $db = \Config\Database::connect();
+
+        //Sets up a Query Builder around the DB in the table Piece
+        $builder = $db -> table('piece');
+
+        //Sets the where, this specifies the piece to update
+        $builder -> where('Piece_ID', $id);
         
+        //Deletes the piece from the table
+        $builder -> delete();
+
+
     }
 
 

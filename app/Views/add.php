@@ -1,5 +1,5 @@
 <!-- Styles the add page with out the music note -->
-<link rel="stylesheet" href="<?= base_url('assets/CSS/add.css') ?>">
+<link rel="stylesheet" type="text/css" href="<?= base_url('assets/CSS/add.css') ?>">
 	<main class="Add">
 		<h2>Add</h2>
 
