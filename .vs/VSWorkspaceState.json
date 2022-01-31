@@ -2,12 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\assets",
-    "\\app\\assets\\CSS",
-    "\\app\\assets\\Images",
-    "\\app\\Views",
-    "\\app\\Views\\templates"
+    "\\app\\Controllers",
+    "\\app\\Models",
+    "\\app\\Views"
   ],
-  "SelectedNode": "\\app\\assets\\Images\\favicon.ico",
+  "SelectedNode": "\\app\\Views\\temp.html",
   "PreviewInSolutionExplorer": false
 }

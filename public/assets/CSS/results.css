@@ -22,6 +22,22 @@
     justify-content: center;
 }
 
-table tr, td, th{
-    justify-content: left;
+.TableHeader {
+    background-color: lightgrey;
+
+    outline: solid;
+    outline-color: black;
+
+    border-collapse: collapse;
+}
+
+.TableRows {
+    text-align: center;
+
+    outline:solid;
+    outline-color: grey;
+}
+
+.ListActions {
+      list-style: none;
 }

@@ -50,7 +50,11 @@ class Edit extends BaseController {
 	*	@param		$id -	The id of the piece to have the year last played updated
 	*/
 	public function lastPlayedUpdate($id) {
-		
+		//Initilizes a new model
+		$model = new music();
+
+		//Calls and sets the last year played to the current server clock's year
+		$model -> playedUpdate($id);
 	}
 
 
@@ -71,8 +75,8 @@ class Edit extends BaseController {
 			'title' => 'Search'
 		];
 
+		echo view('templates/header');
 
-		return redirect()->back()->withInput();
 	}
 
 
@@ -102,7 +106,7 @@ class Edit extends BaseController {
 			//Only grabs the non NULL values (the criteria the user submitted)
 			//Does not add in the Piece_ID, this will be passed into the model method as a
 			//separate argument to make the handling of the data less complex
-			if (isset($value) && strcmp('Piece_ID', esc($key)) != 0) {
+			if ($value != NULL && strcmp('Piece_ID', esc($key)) != 0) {
 				$temp[$key] = esc($value);
 			} else if (strcmp('Piece_ID', esc($key)) == 0) {  //This separates the ID 
 				$id = esc($value);

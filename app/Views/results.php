@@ -3,9 +3,9 @@
 
 
 		<!--Lists attributes of each piece as list items and a header -->
-		<table class="Results">
+		<table class="Result">
 
-			<tr>
+			<tr class="TableHeader">
 				<th>Title</th>
 				<th>Arranger</th>
 				<th>Composer</th>
@@ -17,8 +17,8 @@
 
 			<?php foreach($results as $piece):?>
 
-				<tr>
-					<td><a href='/Edit/edit/<?= $piece['Piece_ID']?>'><?= $piece['Title'] ?></a></td>
+				<tr class="TableRows">
+					<td><a href='/Edit/edit/<?= $piece['Piece_ID']?>' style="a:visited a:link {color: black}"><?= $piece['Title'] ?></a></td>
 
 					<td><?= $piece['Arranger'] ?></td>
 
@@ -31,8 +31,8 @@
 					<td><?= $piece['Last_Played'] ?></td>
 
 					<td>
-						<ul>
-							<li><a href="/View/Played/<?= $piece['Piece_ID'] ?>">Played</a></li>
+						<ul class="ListActions">
+							<li><a href="/Edit/lastPlayedUpdate/<?= $piece['Piece_ID'] ?>">Played</a></li>
 							<li><a href="/Edit/deletePiece/<?= $piece['Piece_ID'] ?>">Delete</a></li>
 						</ul>
 					</td>

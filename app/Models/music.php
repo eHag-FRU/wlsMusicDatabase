@@ -99,6 +99,30 @@ class music extends Model {
         return $result -> getResultArray();
     }
 
+    /**
+    *   Sets the last year played to the current server clock's year
+    *
+    *   @param  $id -   The ID of the piece to update the year last played
+    */
+
+    public function playedUpdate($id) {
+          //Connects to the default (and only), database
+        $db = \Config\Database::connect();
+
+        //Sets up a Query Builder around the DB in the table Piece
+        $builder = $db -> table('piece');
+
+        //Gets the current year in PHP to be used in setting the last played
+        $year = date("Y");
+
+        //Sets the Last_Played to the servers current year on the clock
+        $builder -> set('Last_Played', $year);
+
+        //Sets the where, this specifies the piece to update
+        $builder -> where('Piece_ID', $id);
+    }
+
+
 
 
     public function pieceUpdate($id, $arr) {
@@ -112,18 +136,37 @@ class music extends Model {
         //Sets the where, this specifies the piece to update
         $builder -> where('Piece_ID', $id);
         
-        //Sets up an array of the data to be sent in
-        $data = [
-            'LibNumber' => $arr['LibNumber'],
-            'Title' => $arr['title'],
-            'Composer' => $arr['composer'],
-            'Arranger' => $arr['Arranger'],
-            'Last_Played' => $arr['Last_Played']
-        ];
+        //Blank data array to hold the form data passed in
+        $data = [];
 
-        //Checks to see if the type has been changed, if so add it to the array of information to be updated.
-        if(array_key_exists('Type', $arr)) {
-            $data['Type'] =  $arr['Type'];
+        //Loops through each of the values in the array that hold the edited data
+		foreach($arr as $key => $value) {
+			
+			//Make the where statement match the key and 
+			//value to the database collumn header, using a switch statement to ensure the proper where statement is used
+			switch($key) {
+			    case 'title':
+                    $data['Title'] = $arr['title'];
+                    break;
+                case 'type':
+                    $data['Type'] =  $arr['Type'];
+                    break;
+                case 'Arranger':
+                    $data['Arranger'] = $arr['Arranger'];
+                    break;
+                case 'composer':
+                    $data['Composer'] = $arr['composer'];
+                    break;
+                case 'LibNumber':
+                    $data['LibNumber'] = $arr['LibNumber'];
+                    break;
+                case 'YearLastPlayed':
+                    $data['Last_Played'] = $arr['Last_Played'];
+                    break;
+                case 'Piece_ID':
+                    $data['Piece_ID'] = $arr['Piece_ID'];
+                    break;
+			};
         }
 
         //Sets each of the fields to the corrisponding value
