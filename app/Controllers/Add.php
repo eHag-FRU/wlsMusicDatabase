@@ -43,6 +43,9 @@ class Add extends BaseController {
         echo view('templates/header.php', $data);
         echo view('add', $data);
         echo view('templates/footer.php');
+
+		//Testing echoing an alert in Java Scrip
+		echo "<script>alert(\"Testing\");</script>";
 	}
 
 
