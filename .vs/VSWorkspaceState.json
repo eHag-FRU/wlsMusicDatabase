@@ -2,10 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\Controllers",
-    "\\app\\Models",
     "\\app\\Views"
   ],
-  "SelectedNode": "\\app\\Views\\temp.html",
+  "SelectedNode": "\\app\\Views\\add.php",
   "PreviewInSolutionExplorer": false
 }
