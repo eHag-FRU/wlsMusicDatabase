@@ -11,13 +11,13 @@
 					
 					
 					
-					<lable for="Title">Title:</lable>
-					<input type="text" class="Title" id="Title" name="form[title]" placeholder="Crazy Train" default='NULL'>
+					<label for="Title">Title:</label>
+					<input type="text" class="Title w3-input" id="Title" name="form[title]" placeholder="Crazy Train" default='NULL'>
 
 					<br>
 					<br>
 
-					<lable for="Type">Piece Type: </lable>
+					<label for="Type">Piece Type: </label>
 					<select class="Type" name="form[type]" required>
 						<option	value="Concert">Concert</option>
 
@@ -27,31 +27,31 @@
 					<br>
 					<br>
 
-					<lable for="Arranger">Arranger</lable>
+					<label for="Arranger">Arranger</label>
 					<input type="text" class='Arranger' name="form[Arranger]" default='NULL'>
 
 					<br>
 					<br>
 						
-					<lable for="Composer">Composer:</lable>
+					<label for="Composer">Composer:</label>
 					<input type="text" class="Composer" id="Composer" name="form[composer]" placeholder="Crazy Train" default='NULL'>
 
 					<br>
 					<br>
 						
-					<lable for="LibNumber">Music Library Number:</lable>
+					<label for="LibNumber">Music Library Number:</label>
 					<input type="number" class="LibNumber" id="LibNumber" name="form[LibNumber]" default='NULL'>
 
 					<br>
 					<br>
 						
-					<lable for="YearLastPlayed">Year Last Played:</lable>
+					<label for="YearLastPlayed">Year Last Played:</label>
 					<input type="text" maxlength="4" minlength="4" class="YearLastPlayed" id="YearLastPlayed" name="form[YearLastPlayed]" default='NULL'>
 
 
 					<p><em>*A blank search will search for everything</em></p>
 
-					<br><button type="submit">Submit</button><br>
+					<br><button type="submit" class="w3-button w3-orange w3-margin" style="float: right; ">Submit</button><br>
 	
 				</form>				
 			</main>

@@ -23,11 +23,13 @@ class Add extends BaseController {
 	public function addPiece() {
 		 $model = new Music();
 
+		
 		//Array to hold form data
 		$temp = [];
 
 		//Cleanse all of the form data and put in temp[]
-		foreach($_POST['form'] as $key => $value) {
+		//$_POST['form']
+		foreach($form as $key => $value) {
 			$temp[$key] = esc($value);
 		}
 

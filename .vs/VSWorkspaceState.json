@@ -2,8 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\Views"
+    "\\app\\Config",
+    "\\app\\Controllers",
+    "\\app\\Models",
+    "\\app\\Views",
+    "\\app\\Views\\templates",
+    "\\public",
+    "\\public\\assets",
+    "\\public\\assets\\CSS"
   ],
-  "SelectedNode": "\\app\\Views\\add.php",
+  "SelectedNode": "\\app\\Config\\Database.php",
   "PreviewInSolutionExplorer": false
 }

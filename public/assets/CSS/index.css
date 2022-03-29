@@ -47,12 +47,12 @@ nav ul li a:hover {
     color: darkorange;
 }
 
-header {
+.header {
     justify-content: center;
     display: inline-grid;
     grid-area: Header;
-    background-color: darkorange;
     color: white;
+    background-color: darkorange;
 }
 
 

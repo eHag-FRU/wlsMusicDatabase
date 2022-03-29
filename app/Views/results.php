@@ -3,7 +3,7 @@
 
 
 		<!--Lists attributes of each piece as list items and a header -->
-		<table class="Result">
+		<table class="Result" class="w3-table">
 
 			<tr class="TableHeader">
 				<th>Title</th>

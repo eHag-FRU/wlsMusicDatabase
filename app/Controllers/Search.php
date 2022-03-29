@@ -8,10 +8,15 @@ class Search extends BaseController {
 
 	//Function to check inputs to find out what search to preform
 	public function index() {
+
+		 //TEMP DATA
+		$form = [
+			'type' => 'Marching',
+		];
 		
 		//Double checks if the form has been posted, if not then redirection happens
 		//This prevents the user from seeing any error screens
-		if (!array_key_exists('form', $_POST)){
+		/*if (!array_key_exists('form', $_POST)){
 			$temp = ['title' => 'Search'];
 
 			echo view('templates/header.php', $temp );
@@ -19,17 +24,18 @@ class Search extends BaseController {
 			echo view('templates/footer.php');
 
 			exit();
-		}
+		}*/
 		
 
 
 		//Array to hold form data
 		$temp = [];
 
-
+		
 
 		//Cleanse all of the form data and put in temp[]
-		foreach($_POST['form'] as $key => $value) {
+		//$POST['form']
+		foreach($form as $key => $value) {
 			//Only grabs the non NULL values (the criteria the user searched for)
 			if ($value != NULL) {
 				$temp[$key] = esc($value);

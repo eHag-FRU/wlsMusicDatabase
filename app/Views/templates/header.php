@@ -7,6 +7,8 @@
 		<link rel="icon" href="assets/Images/favicon.ico">
 
 		<link rel="stylesheet" type="text/css" href="<?= base_url('assets/CSS/index.css')?>">
+
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
 	</head>
 
 	<body>
