@@ -2,8 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\Views"
+    "\\app\\Controllers",
+    "\\app\\ThirdParty",
+    "\\app\\Views",
+    "\\app\\Views\\templates"
   ],
-  "SelectedNode": "\\app\\Views\\add.php",
+  "SelectedNode": "\\composer.lock",
   "PreviewInSolutionExplorer": false
 }
