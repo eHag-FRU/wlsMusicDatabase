@@ -27,8 +27,8 @@
 					<br>
 					<br>
 
-					<label  for="Arranger">Arranger</label >
-					<input type="text" class='Arranger' name="form[Arranger]" default='NULL'>
+					<label  for="Arranger">Arranger: </label >
+					<input type="text" class='Arranger' id="Arranger" name="form[Arranger]" default='NULL'>
 
 					<br>
 					<br>
