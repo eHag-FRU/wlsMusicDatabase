@@ -15,9 +15,9 @@ class music extends Model {
     *    Function to find all pieces based on the type
     *    that is selected at the search page
     *
-    *    @param  $arr -  Array of the form input
+    *    @param  array $arr  Array of the form input
     *
-    *    @return The search results
+    *    @return array $result  Returns the results of the search
     */
     public function all($arr) {
         //Connects to the default (and only), database
@@ -40,8 +40,10 @@ class music extends Model {
     /*
     *    A function to add a piece of music to the database
     *
-    *    @param  $arr -  The array of POST form information
+    *    @param  array $arr  The array of POST form information
     *
+    *
+    *    @return    NONE
     */
     public function add($arr) {
         //Connects to the default (and only), database
@@ -74,8 +76,8 @@ class music extends Model {
     /**
     *   Gets the piece from the database and returns it
     *
-    *   @param    $id -  The id of the piece
-    *   @return   the result of the databse search in an array
+    *   @param   int  $id  The id of the piece
+    *   @return   array $result  the result of the database search in an array
     */
     public function getPieceByID($id) {
         //Connects to the default (and only), database
@@ -102,7 +104,7 @@ class music extends Model {
     /**
     *   Sets the last year played to the current server clock's year
     *
-    *   @param  $id -   The ID of the piece to update the year last played
+    *   @param  int   $id  The ID of the piece to update the year last played
     */
 
     public function playedUpdate($id) {
@@ -113,6 +115,7 @@ class music extends Model {
         $builder = $db -> table('piece');
 
         //Gets the current year in PHP to be used in setting the last played
+        // FIXME: Fix so the actual year is returned and used
         $year = date("Y");
 
         //Sets the Last_Played to the servers current year on the clock
@@ -182,7 +185,7 @@ class music extends Model {
     /**
     *    Function that deletes a piece from the database based on the supplied piece ID
     *
-    *   @param  $id -   The id of the piece to be deleted 
+    *   @param  int  $id   The id of the piece to be deleted 
     */
 
     public function deletePiece($id) {
@@ -209,7 +212,7 @@ class music extends Model {
     *
     *    @arguments array $arr  the array of POST form data from the search page
     *
-    *    @return array The results of the search
+    *    @return array  array The results of the search
     *
     */
     public function findPieceSearch($arr) {

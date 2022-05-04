@@ -124,6 +124,9 @@ nb-configuration.xml
 #Visual Studio 2019
 .vs/
 
+#PHP Documrentor
+.phpdoc/
+
 /results/
 /phpunit*.xml
 /.phpunit.*.cache

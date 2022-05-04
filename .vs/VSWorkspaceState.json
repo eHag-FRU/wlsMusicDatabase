@@ -2,11 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\Controllers",
-    "\\app\\ThirdParty",
-    "\\app\\Views",
     "\\app\\Views\\templates"
   ],
-  "SelectedNode": "\\composer.lock",
+  "SelectedNode": "\\.gitignore",
   "PreviewInSolutionExplorer": false
 }

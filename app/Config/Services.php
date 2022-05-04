@@ -3,6 +3,7 @@
 namespace Config;
 
 use CodeIgniter\Config\BaseService;
+use CodIgniter\Config\Pager;
 
 /**
  * Services Configuration file.
@@ -29,6 +30,4 @@ class Services extends BaseService
      *     return new \CodeIgniter\Example();
      * }
      */
-
-     //$pager = \Config\Services::pager();
 }
