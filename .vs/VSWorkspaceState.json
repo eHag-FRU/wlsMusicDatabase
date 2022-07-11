@@ -2,8 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\Views\\templates"
+    "\\app\\Views",
+    "\\app\\Views\\templates",
+    "\\public",
+    "\\public\\assets",
+    "\\public\\assets\\CSS"
   ],
-  "SelectedNode": "\\.gitignore",
+  "SelectedNode": "\\app\\Views\\templates\\header.php",
   "PreviewInSolutionExplorer": false
 }

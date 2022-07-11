@@ -1,9 +1,10 @@
+			<link rel="stylesheet" type="text/css" src="<? base_url("assets/CSS/searchBox.css") ?>"
 
 			<img src="treble.jpg" class="Image">
 
 
 
-			<main class="Search">
+			<main class="Search searchBox">
 				<h2 class="Search_Header">Search</h2>
 				
 				<form action="/Search" method="POST">

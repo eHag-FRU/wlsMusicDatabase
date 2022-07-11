@@ -1,4 +1,4 @@
-* {
+*{
     font-family: Calibri;
 }
 
@@ -53,6 +53,10 @@ header {
     grid-area: Header;
     background-color: darkorange;
     color: white;
+}
+
+.header h1{
+    text-align: center;
 }
 
 
