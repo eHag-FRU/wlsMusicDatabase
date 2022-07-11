@@ -1,0 +1,45 @@
+.searchBox {
+  display: grid;
+  grid-template: 
+      "searchHeader searchHeader search Header searchHeader searchHeader search Header"
+      "title        .            composer      .             arranger     ." 1fr,
+      "pieceType    .            libNumber     .             lastPlayed   ." 1fr,
+      ".            .            note          .             searchButton ." 1fr
+      /1fr          1fr         1fr            1fr           1fr
+}
+
+.searchHeader {
+    grid-area: searchHeader;
+}
+
+.title {
+    grid-area: title;
+}
+
+.composer {
+    grid-area: composer;
+}
+
+.arranger {
+    grid-area: arranger;
+}
+
+.pieceType {
+    grid-area: pieceType;
+}
+
+.libNumber {
+    grid-area: libNumber;
+}
+
+.lastPlayed {
+    grid-area: lastPlayed;
+}
+
+.note {
+    grid-area: note;
+}
+
+.searchButton {
+    grid-area: searchButton;
+}
