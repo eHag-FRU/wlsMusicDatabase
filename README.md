@@ -17,3 +17,4 @@ Languages, Frameworks, and Server Software Used:
 * CSS 3
 * CodeIgniter 4
 * XAMPP Web Server
+* SQLServerBooster (For database backups on a sechdule of once a month at midnight)
